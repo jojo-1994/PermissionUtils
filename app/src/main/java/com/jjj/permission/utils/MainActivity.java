@@ -2,13 +2,13 @@ package com.jjj.permission.utils;
 
 import android.Manifest;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 
 import com.jjj.permission.PermissionCallback;
 import com.jjj.permission.PermissionUtils;
 import com.jjj.permissionutils.R;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     private static String[] NEEDED_PERMISSIONS = new String[]{
