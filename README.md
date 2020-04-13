@@ -9,11 +9,6 @@ implementation 'com.github.jjjSilence:PermissionUtils:1.0.0'
 
 3.Demo:
 
-public class MainActivity extends AppCompatActivity {
-    private static String[] NEEDED_PERMISSIONS = new String[]{
-            Manifest.permission.CAMERA
-    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,4 +33,3 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-}
