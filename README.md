@@ -8,6 +8,7 @@ maven { url 'https://jitpack.io' }
 implementation 'com.github.jjjSilence:PermissionUtils:1.0.0'
 
 3.Demo:
+
 public class MainActivity extends AppCompatActivity {
     private static String[] NEEDED_PERMISSIONS = new String[]{
             Manifest.permission.CAMERA
