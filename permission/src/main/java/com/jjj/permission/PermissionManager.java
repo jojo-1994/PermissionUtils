@@ -55,6 +55,10 @@ public class PermissionManager {
         }
     }
 
+    public Activity getActivity() {
+        return mActivity;
+    }
+
     private void showDefaultTipsDialog() {
         if (mDefaultTipsDialog == null) {
             createDefaultTipsDialog();
