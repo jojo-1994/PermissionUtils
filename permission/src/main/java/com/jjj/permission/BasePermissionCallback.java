@@ -6,7 +6,7 @@ package com.jjj.permission;
  * @author jiangjiaojiao
  * @since 2020-04-13
  */
-public interface PermissionCallback {
+public interface BasePermissionCallback {
     /**
      * Granted permissions
      */
@@ -14,8 +14,15 @@ public interface PermissionCallback {
 
     /**
      * Denied permissions
-     *
+     */
+    void deniedPermissions();
+
+    /**
      * @return Is use default tips dialog if lacking permissions
      */
-    boolean deniedPermissions();
+    boolean isUseDefaultTipsDialog();
+
+    void showCustomTipsDialog();
+
+    void hideCustomTipsDialog();
 }
