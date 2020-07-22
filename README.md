@@ -1,5 +1,4 @@
-# PermissionUtils
-# 权限管理库
+# PermissionUtils 权限管理库
 
 最近更新：添加“不再提醒”选项的处理逻辑；重构。
 
