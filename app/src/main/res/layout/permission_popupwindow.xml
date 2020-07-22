@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    tools:ignore="MissingDefaultResource">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@android:color/transparent">
+
+        <TextView
+            android:id="@+id/title_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="权限不足会影响当前使用\n请重新授权"
+            android:textColor="@color/primary_color"
+            android:textSize="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/left_item_view"
+            android:layout_width="90dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/item_background_unpressed"
+            android:gravity="center"
+            android:text="退出应用"
+            android:textColor="@color/text_color"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/right_item_view"
+            app:layout_constraintTop_toBottomOf="@+id/title_view" />
+
+        <TextView
+            android:id="@+id/right_item_view"
+            android:layout_width="90dp"
+            android:layout_height="80dp"
+            android:background="@drawable/item_background_pressed"
+            android:gravity="center"
+            android:text="重新授权"
+            android:textColor="@color/text_color"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="@+id/left_item_view"
+            app:layout_constraintLeft_toRightOf="@+id/left_item_view"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/left_item_view" />
+    </android.support.constraint.ConstraintLayout>
+</FrameLayout>

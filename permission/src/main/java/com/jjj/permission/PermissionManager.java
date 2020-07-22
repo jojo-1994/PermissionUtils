@@ -47,18 +47,6 @@ public class PermissionManager {
         }
     }
 
-    public void requestPermission() {
-        if (PermissionUtils.isSuccessRequestPermissions(mActivity, mNeedPermissions)) {
-            PermissionUtils.requestPermissions(mActivity, mNeedPermissions);
-        } else {
-            PermissionUtils.goSettingPage(mActivity);
-        }
-    }
-
-    public Activity getActivity() {
-        return mActivity;
-    }
-
     private void showDefaultTipsDialog() {
         if (mDefaultTipsDialog == null) {
             createDefaultTipsDialog();
@@ -106,7 +94,7 @@ public class PermissionManager {
                 .setPositiveButton("立即授权", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        requestPermission();
+                        PermissionUtils.checkAndRequestPermissions(mActivity, mNeedPermissions);
                     }
                 })
                 .setCancelable(false)

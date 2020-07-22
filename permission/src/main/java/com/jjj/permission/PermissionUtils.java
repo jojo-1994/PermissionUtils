@@ -21,15 +21,15 @@ public class PermissionUtils {
     /**
      * 检查是否获取权限
      *
-     * @param context
+     * @param activity
      * @param neededPermissions
      * @return false: 缺少权限
      */
-    public static boolean checkPermissions(Activity context, String[] neededPermissions) {
+    public static boolean checkPermissions(Activity activity, String[] neededPermissions) {
         boolean allGranted = true;
         for (String neededPermission : neededPermissions) {
             allGranted = allGranted &&
-                    (ContextCompat.checkSelfPermission(context, neededPermission) ==
+                    (ContextCompat.checkSelfPermission(activity, neededPermission) ==
                             PackageManager.PERMISSION_GRANTED);
         }
         return allGranted;
@@ -67,6 +67,21 @@ public class PermissionUtils {
      */
     public static void requestPermissions(Activity activity, String[] neededPermissions) {
         ActivityCompat.requestPermissions(activity, neededPermissions, ACTION_REQUEST_PERMISSIONS);
+    }
+
+
+    /**
+     * 检查是否有权限被设置过"不再提示"，如果是，申请权限；否则，去系统的应用设置界面；
+     *
+     * @param activity
+     * @param neededPermissions
+     */
+    public static void checkAndRequestPermissions(Activity activity, String[] neededPermissions) {
+        if (PermissionUtils.isSuccessRequestPermissions(activity, neededPermissions)) {
+            PermissionUtils.requestPermissions(activity, neededPermissions);
+        } else {
+            PermissionUtils.goSettingPage(activity);
+        }
     }
 
     /**
