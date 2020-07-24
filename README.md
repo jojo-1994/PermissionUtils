@@ -22,11 +22,16 @@ shouldShowRequestPermissionRationale返回值:
  
  
 该库的使用方式：
-1.在project的build.gradle文件中添加
+1.在project的build.gradle文件中添加：
+```
 maven { url 'https://jitpack.io' }
+```
 
-2.在app的build.gradle文件中添加
+
+2.在app的build.gradle文件中添加：
+```
 implementation 'com.github.jjjSilence:PermissionUtils:1.0.5'
+```
 
 
 3.具体示例：
