@@ -28,5 +28,46 @@ maven { url 'https://jitpack.io' }
 2.在app的build.gradle文件中添加
 implementation 'com.github.jjjSilence:PermissionUtils:1.0.5'
 
+
+3.具体示例：
  - 使用默认提示框：[示例](https://github.com/jjjSilence/PermissionUtils/blob/master/app/src/main/java/com/jjj/permission/utils/DefaultDialogActivity.java)
  - 使用自定义提示框：[示例](https://github.com/jjjSilence/PermissionUtils/blob/master/app/src/main/java/com/jjj/permission/utils/CustomDialogActivity.java)
+  
+ 
+默认提示框的示例代码
+    
+    private PermissionManager mPermissionManager;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.xxx);
+
+        mPermissionManager = new PermissionManager(this, NEEDED_PERMISSIONS,
+                new DefaultPermissionCallback() {
+                    @Override
+                    public void grantedPermissions() {
+                        //初始化工作
+                        //init();
+                        mStatusButton.setText("已获取权限");
+                    }
+
+                    @Override
+                    public void deniedPermissions() {
+                        mStatusButton.setText("未获取权限");
+                    }
+                });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mPermissionManager.onResume();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        mPermissionManager.onRequestPermissionsResult(requestCode);
+    }
+    
