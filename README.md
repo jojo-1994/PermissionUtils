@@ -22,19 +22,19 @@ shouldShowRequestPermissionRationale返回值:
  
  
 该库的使用方式：
-1.在project的build.gradle文件中添加：
+#### 1.在project的build.gradle文件中添加：
 ```
 maven { url 'https://jitpack.io' }
 ```
 
 
-2.在app的build.gradle文件中添加：
+#### 2.在app的build.gradle文件中添加：
 ```
 implementation 'com.github.jjjSilence:PermissionUtils:1.0.5'
 ```
 
 
-3.具体示例：
+#### 3.具体示例：
  - 使用默认提示框：[示例](https://github.com/jjjSilence/PermissionUtils/blob/master/app/src/main/java/com/jjj/permission/utils/DefaultDialogActivity.java)
  - 使用自定义提示框：[示例](https://github.com/jjjSilence/PermissionUtils/blob/master/app/src/main/java/com/jjj/permission/utils/CustomDialogActivity.java)
   
